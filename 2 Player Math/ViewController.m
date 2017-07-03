@@ -46,12 +46,12 @@
     if (self.gameModel.currentPlayer == self.gameModel.player1) {
         self.questionLabel.text = [self.gameModel outputQuestion];
         self.player1Score.text = [self.gameModel checkWithScore:self.gameModel.answer];
-        self.player1Lives.text = [self.gameModel checkWithLives:self.gameModel.answer];
+       // self.player1Lives.text = [self.gameModel checkWithLives:self.gameModel.answer];
         self.gameModel.currentPlayer = self.gameModel.player2;
     } else {
         self.questionLabel.text = [self.gameModel outputQuestion];
         self.player2Score.text = [self.gameModel checkWithScore:self.gameModel.answer];
-        self.player2Lives.text = [self.gameModel checkWithLives:self.gameModel.answer];
+       // self.player2Lives.text = [self.gameModel checkWithLives:self.gameModel.answer];
         self.gameModel.currentPlayer = self.gameModel.player1;
     }
     
@@ -62,11 +62,13 @@
 
 - (IBAction)numbersTapped:(UIButton *)sender {
     
-    NSString *userGuess = [self.answerLabel.text stringByAppendingString:[sender currentTitle]];
+  //  NSString *userGuess = [self.answerLabel.text stringByAppendingString:[sender currentTitle]];
+    NSString *userGuess = [sender currentTitle];
     
     [self.answerLabel setText:userGuess];
     [self.gameModel checkWithScore:[userGuess integerValue]];
-    [self.gameModel checkWithLives:[userGuess integerValue]]; 
+   // [self.gameModel checkWithLives:[userGuess integerValue]];
+   
 }
 
 
