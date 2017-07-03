@@ -15,6 +15,7 @@
 @property (nonatomic) Player *player2;
 @property (nonatomic) Player *currentPlayer;
 
+@property (nonatomic) NSInteger answer;
 @property (nonatomic) NSInteger rightNum;
 @property (nonatomic) NSInteger leftNum;
 

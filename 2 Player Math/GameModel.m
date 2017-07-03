@@ -19,7 +19,8 @@
         _player2 = [[Player alloc] initWithName:@"Player 2"];
         _currentPlayer = _player1;
         _rightNum = arc4random_uniform(10) + 11;
-        _leftNum = arc4random_uniform(10) + 11; 
+        _leftNum = arc4random_uniform(10) + 11;
+        _answer = _leftNum + _rightNum; 
         
     }
     return self;
@@ -55,12 +56,12 @@
 
 -(BOOL)GAMEOVER {
     
-    BOOL GAMEON = YES;
+    BOOL over = NO;
     
     if (self.currentPlayer.lives == 0) {
-        GAMEON = NO;
+        over = YES;
     }
-    return GAMEON;
+    return over;
 }
 
 
